@@ -167,12 +167,12 @@
                     <!-- <a href="#" class="btn-custom">Contact</a> -->
                 </div>
             </div>
-            <div class="col-12 col-md-4">
+            <!-- <div class="col-12 col-md-4">
                 <div class="team-card">
                     <img src="../src/assets/images/aman singh_jfif.webp" alt="Aman Singh">
                     <h2 class="team-name">Aman Singh</h2>
                     <!-- <a href="#" class="btn-custom">Contact</a> -->
-                </div>
+                </div> -->
             </div>
             <div class="col-12 col-md-4">
                 <div class="team-card">
