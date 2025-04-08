@@ -1,14 +1,20 @@
 {
      "functions": {
+       "Component/**/*.php": {
+         "runtime": "vercel-php@0.7.3"
+       },
        "Controller/**/*.php": {
-         "runtime": "vercel-php@0.7.3" 
+         "runtime": "vercel-php@0.7.3"
+       },
+       "Model/**/*.php": {
+         "runtime": "vercel-php@0.7.3"
        }
      },
      "routes": [
-       
-       { "src": "/", "dest": "/index.html" },
-   
-      
-       { "src": "/api/(.*)", "dest": "/Controller/$1.php" }
+       {
+         "src": "/(.*)",
+         "dest": "/Component/$1.php"
+       }
      ]
    }
+   
