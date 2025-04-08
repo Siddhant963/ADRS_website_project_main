@@ -19,6 +19,7 @@ $sql  = "insert into registrations (first_name, last_name, gender , dob , email,
 
 if ($conn->query($sql) === TRUE){
     echo "added";
+    header('location: ../Component/Register.php');
 }
 else{ 
     echo "error".$conn->error;

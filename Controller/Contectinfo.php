@@ -31,7 +31,7 @@ $sql = "INSERT INTO contact_info (name, email_address, contact_number, dob, mess
 //         echo "Message saved, but email failed to send.";
 //             }
    
-    
+    header('location: ../Component/Contact.php');
  }
  else {
         echo "Error: " . $sql . "<br>" . $conn->error;

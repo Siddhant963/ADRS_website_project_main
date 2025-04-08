@@ -229,7 +229,7 @@ body{
     <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a style="color: #ffff;" class="nav-link active " href="../index.php">Home</a>
+                        <a style="color: #ffff;" class="nav-link active " href="../index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a style="color: #ffff;" class="nav-link" href="./About_Us.php">About</a>
