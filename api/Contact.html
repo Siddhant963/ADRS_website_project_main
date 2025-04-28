@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADRS Techno</title>
+    <!-- Link to Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #243642;
+            color: #ffff;
+        }
+
+        /* Fixed navbar styling */
+        .navhead {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .navc {
+            background-color: #3d5c71;
+            padding: 10px 0;
+        }
+        
+        .navbar-nav .nav-link {
+            color: #ffff !important;
+            font-weight: 500;
+            padding: 8px 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: #243642 !important;
+            background-color: #ffff;
+            border-radius: 4px;
+        }
+        
+        .navbar-toggler {
+            border-color: rgba(255,255,255,0.5);
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+        
+        .white-thick-logo {
+            filter: invert(1) brightness(2) contrast(2) drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.8));
+            width: 130px;
+            height: auto;
+            display: block;
+        }
+
+        /* Main content padding to account for fixed navbar */
+        .good {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            margin-top: 80px; /* Adjusted for fixed navbar */
+        }
+
+        /* Rest of your existing CSS remains the same */
+        .container{
+            max-width: 700px;
+            width: 80vw;
+            padding: 20px;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+        } 
+        
+        .containr {
+            max-width: 600px;
+            width: 90vw;
+            padding: 20px;
+            background-color: #243642 ;
+            margin-bottom: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h3, h4 {
+            color: #FFFFFF;
+        }
+
+        p {
+            color: #629584;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .input, .input1 {
+            padding: 10px;
+            font-size: 1em;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .input1 {
+            height: 80px;
+            font-size: 1rem;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .but {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #387478;
+            color: white;
+            width: 100%;
+        }
+
+        .second {
+            display: flex;
+            gap: 20px;
+        }
+
+        .second .form-group {
+            flex: 1;
+        }
+
+        .fix {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .svg, .svg1 {
+            height: 20px;
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            color: #ffff;
+            font-size: 1em;
+            text-decoration: none;
+        }
+
+        .shift {
+            margin-top: -20px;
+            font-weight: 300;
+            margin-left: 1.5rem;
+            color: #ffff;
+        }
+
+        .iframe {
+            padding: 20px;
+            align-items: center;
+            height: max-content;
+            width: 100vw;
+            background-color: white;
+        }
+        
+        .contain {
+            width: 100vw;
+            margin-right: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .x {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .x {
+                flex-direction: column;
+            }
+            .container, .containr {
+                width: 100%;
+                margin-left: -15px;
+            }
+            .contain{
+                width: 100%;
+            }
+            .second .form-group {
+                flex: 1;
+                width: 180px;
+                height: 4.5rem;
+                margin-left: -10px;
+            }
+        }
+        
+        .carousal{
+            height: 60px;
+        }
+        
+        .a{
+            height: 70vh;
+        }
+        
+        .mope{
+            position: relative;
+            width: 100vw;
+            height: 11vh;
+            background-color: #243642;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .mope span{
+            margin-right: 10px;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        
+        .ani{
+            animation: slide 17s linear infinite, color-change 1s linear infinite;
+            overflow: hidden; 
+            width: 100%;
+        }
+        
+        .submit-button {
+            background-color: #243642;
+            color: #fff;
+            transition: background-color 0.3s;
+            border-radius: 2px;
+            margin-left:25;
+            border:1px solid #fff;
+        }
+        
+        @keyframes slide {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%); 
+            }
+        }
+        
+        @keyframes color-change {
+            0% { color: #ff6347; }   
+            20% { color: #ffd700; }  
+            40% { color: #00fa9a; }  
+            60% { color: #1e90ff; }  
+            80% { color: #ff69b4; }  
+            100% { color: #ff6347; } 
+        }
+    
+        .submit-button:hover {
+            background-color: #243642;
+        }
+
+        h4 {
+            margin-bottom: 15px;
+            font-size: 20px;
+            color: #ffff;
+        }
+    
+        ul {
+            list-style-type: square;
+            margin-left: 20px;
+            padding: 0;
+        }
+    
+        ul li {
+            margin: 10px 0;
+        }
+    
+        /* Container Styles */
+        .online-marketing-needs {
+            padding: 20px;
+        }
+    
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+    
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -15px;
+        }
+    
+        .col-lg-4, .col-md-4, .col-sm-4, .col-xs-12 {
+            padding: 15px;
+            flex: 1 1 calc(33.33% - 30px);
+        }
+    
+        /* Full-width for small screens */
+        @media (max-width: 768px) {
+            .col-lg-4, .col-md-4, .col-sm-4, .col-xs-12 {
+                flex: 1 1 100%;
+            }
+        }
+    
+        /* Tabs Styling */
+        .nav-pills {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+    
+        .nav-pills li {
+            list-style: none;
+        }
+    
+        .nav-pills a {
+            text-decoration: none;
+            color: #ffff;
+            padding: 10px 15px;
+            border: 1px solid #ffff;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+    
+        .nav-pills a:hover,
+        .nav-pills .active a {
+            background-color: #456479;
+            color: #ffff;
+        }
+    
+        .tab-content {
+            padding: 15px;
+            border: 1px solid #ffff;
+            border-radius: 5px;
+            background-color: #243642;
+            color: #fff;
+        }
+    
+        .tab-pane {
+            display: none;
+        }
+    
+        .tab-pane.active {
+            display: block;
+        }
+        
+        .tushar{
+            height: 15vh;
+            width: 15vw;
+        }
+        
+        footer {
+            background-color: #243642;
+            color: #ffff;
+            padding: 40px 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
+        
+        .column h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .column p {
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        
+        .column a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 0.9em;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .column a:hover {
+            color: #243642;
+        }
+        
+        /* Social Media buttons */
+        .but button {
+            background-color:#666769;
+            border: none;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+        }
+        
+        .but button:hover {
+            background-color: #243642;
+            color:white
+        }
+        
+        /* Google Play button */
+        .bg {
+            background-color: #0a7e07;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .bg:hover {
+            background-color: #5cba5c;
+        }
+        
+        /* Footer Bottom */
+        .footer-bottom {
+            text-align: center;
+            padding: 20px;
+            background-color: #243642;
+            margin-top: 20px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .column {
+                max-width: none;
+                text-align: center;
+            }
+        
+            .column h3 {
+                font-size: 1.3em;
+            }
+        
+            .column p {
+                font-size: 0.9em;
+            }
+        
+            .but button {
+                padding: 8px;
+                margin-right: 8px;
+            }
+        
+            .end p {
+                font-size: 1.1em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .footer-content {
+                padding: 0 10px;
+            }
+        
+            .footer-bottom p {
+                font-size: 0.9em;
+            }
+        
+            .bg {
+                font-size: 0.9em;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="navhead">
+    <nav class="navbar navbar-expand-lg navc">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="../src/assets/images/ADRS_logo.png" alt="Logo" class="white-thick-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./About_Us.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Services.html">Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Our_team.html">Our_Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Register.html">Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./Certificate_Verification.html">Verify</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="good">
+    <!-- Address & Contact Information -->
+    <div class="x">
+        <div class="container p-3">
+            <h1>ADRS TECHNOLOGY</h1>
+            <h3>Address: Near katangi bypass karmeta Jabalpur</h3>
+
+            <div class="fix">
+                <div class="svg">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4">
+                        <path fill-rule="evenodd" d="m3.855 7.286 1.067-.534a1 1 0 0 0 .542-1.046l-.44-2.858A1 1 0 0 0 4.036 2H3a1 1 0 0 0-1 1v2c0 .709.082 1.4.238 2.062a9.012 9.012 0 0 0 6.7 6.7A9.024 9.024 0 0 0 11 14h2a1 1 0 0 0 1-1v-1.036a1 1 0 0 0-.848-.988l-2.858-.44a1 1 0 0 0-1.046.542l-.534 1.067a7.52 7.52 0 0 1-4.86-4.859Z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <h3 class="shift">: 9201347033 , 9076927464</h3>
+                <div class="svg1">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                    </svg>
+                </div>
+                <h3 class="shift">: ADRSTECHNOSOFT@GMAIL.COM</h3>
+            </div>
+
+            <div class="social-icons">
+                <span>Social :</span>
+                <a href="#" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/company/adrs-technology/ " title="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="http://www.instagram.com/adrstechno?igsh=MWZiNTY0aWdjNWgxMA==" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <!-- Message Form -->
+        <div class="containr">
+            <h4>Send Us a Message</h4>
+            <form action="#" method="POST">
+                <div class="second">
+                    <div class="form-group">
+                        <input type="text" id="lastName" name="Name" placeholder=" Name" class="input" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="E-mail Address" class="input" required>
+                    </div>
+                </div>
+                <div class="second">
+                    <div class="form-group">
+                        <input type="number" id="contact" name="contact" placeholder="Contact Number" class="input" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" id="dob" name="dob" placeholder="D.O.B" class="input" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="message" name="message" placeholder="Message" class="input1" required>
+                </div>
+                <div class="button-container">
+                    <button class="but" type="submit">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Google Maps Embed -->
+    <div class="contain">
+        <div class="iframe">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117371.20041529769!2d79.92916776924727!3d23.181467777664804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3981ae047235df95%3A0xc6821d882e8b1b91!2sAxis%20Bank!5e0!3m2!1sen!2sin!4v1698300432713!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
